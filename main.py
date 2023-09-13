@@ -11,6 +11,7 @@ def training(df):
     x1 = [value[0] for value in df.values]
     x2 = [value[1] for value in df.values]
     y = [value[2] for value in df.values]
+    print(x1)
     return
 
 
