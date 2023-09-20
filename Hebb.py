@@ -11,7 +11,7 @@ def OUT(x1, x2, w1, w2, t):
         return -1
 
 
-def training(df):
+def training():
     x1 = [row[0] for row in df]
     x2 = [row[1] for row in df]
     y = [row[2] for row in df]
@@ -37,7 +37,7 @@ def training(df):
     return
 
 def main():
-    training(df)
+    training()
 
     return 0
 
