@@ -3,13 +3,13 @@ from PIL import Image
 import sys
 print(sys.version)
 
-filename = ".jpg"
+filename = "face-crop.jpg"
 image = Image.open(filename) # Открываем изображение
 pix = image.load()
 
-# kernel = [[-1, -4, -1],
-#           [-4, 23, -4],
-#           [-1, -4, -1]]
+kernel = [[-1, -4, -1],
+          [-4, 23, -4],
+          [-1, -4, -1]]
 
 
 # kernel = [[0, 0, 0],
@@ -21,9 +21,9 @@ pix = image.load()
 #           [1, 1, 1],
 #           [1, 1, 1]]
 
-kernel = [[-1, 0, 1],
-          [-2, 0, 2],
-          [-1, 0, 1]]
+# kernel = [[-1, 0, 1],
+#           [-2, 0, 2],
+#           [-1, 0, 1]]
 HEIGHT, LENGTH = image.size
 print(image.size)
 KERNEL_LENGTH, KERNEL_HEIGHT = len(kernel[0]), len(kernel)

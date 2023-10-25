@@ -1,6 +1,4 @@
 from PIL import Image
-LENGTH = 400
-HEIGHT = 400
 
 
 # kernel = [[0, 0, 0],
@@ -11,18 +9,23 @@ HEIGHT = 400
 kernel = [[-1, -4, -1],
           [-4, 23, -4],
           [-1, -4, -1]]
-
+#
 # kernel = [[1, 1, 1],
 #           [1, 1, 1],
 #           [1, 1, 1]]
 
-# kernel = [[-1, -2, -1],
-#           [0, 0, 0],
-#           [1, 2, 1]]
+
+#
+kernel = [[-1, 0, 1],
+          [-2, 0, 2],
+          [-1, 0, 1]]
+
+# LENGTH = 400
+# HEIGHT = 400
 
 KERNEL_HEIGHT = 3
 KERNEL_LENGTH = 3
-filename = "face-crop2.jpg"
+filename = "face-crop.jpg"
 image = Image.open(filename) # Открываем изображение
 pix = image.load()            # Выгружаем значения пикселей
 
@@ -62,8 +65,8 @@ for i in range(HEIGHT-2):
                 # g[i + k][j + m] = kernel[k][m]
                 # b[i + k][j + m] = kernel[k][m]
 
-        # r[i][j] = r_sum
-        # g[i][j] = g_sum
+        r[i][j] = r_sum
+        g[i][j] = g_sum
         b[i][j] = b_sum
 print("done")
 

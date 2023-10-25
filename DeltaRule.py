@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel('delta_rule.xlsx')
+df = pd.read_excel('training_data.xlsx')
 df = df.values.tolist()
 
 def out(net):
