@@ -3,10 +3,18 @@ import pandas as pd
 
 w1 = np.load("w1.npy")
 w2 = np.load("w2.npy")
-
+bias1 = np.load("bias1.npy")
+bias2 = np.load("bias2.npy")
 
 def f(x):
     return 2 / (1 + np.exp(-x)) - 1
+
+
+def relu(x):
+    if x <= 0:
+        return 0
+    else:
+        return x
 
 
 def go(inp):
@@ -44,3 +52,5 @@ for i in range(len(epoch)):
         print(f"accuracy {accuracy * 100} %")
         print(right_guesses, i)
         print("==========")
+
+print(f"overall accuracy {accuracy * 100} %")
